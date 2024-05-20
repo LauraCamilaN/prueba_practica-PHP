@@ -3,7 +3,7 @@ Para poder ejecutar el proyecto sin problema alguno deberá de tener instalado l
 1.	PHP 8.2.0 
 2.	Composer 2.7.6
    
-# Instalación
+# Instrucciones de despliegue
 1.	Realizar la respectiva clonación del proyecto: https://github.com/LauraCamilaN/prueba_practica-PHP.git por medio de GitHub.
 2.	Instalar composer ejecutando el siguiente comando: <b>composer install –prefer-dist –optimize-autoloader</b>
 3.	Copiar el archivo .env.example con el nombre de .env, puede utilizar el comando <b>cp .env.example .env</b>
