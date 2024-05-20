@@ -6,7 +6,11 @@
     const btnCreate = document.getElementById('btnCreate');
 
     function calcular_codigo(){
-        axios.get(`calculate_code/${proceso.value}/${tipo.value}`, {
+        var ruta = "{{ route('documents.calculate_code', ['id_proceso' => '__proceso__', 'id_tipo' => '__tipo__']) }}"
+        .replace('__proceso__', proceso.value)
+        .replace('__tipo__', tipo.value);
+        
+        axios.get(ruta, {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
@@ -44,7 +48,6 @@
         });
 
         if (field) {
-            console.log('todo esta bien');
 
             let data = {
                 nombre: document.getElementById('nombre').value,

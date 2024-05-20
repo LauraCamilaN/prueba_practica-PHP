@@ -23,4 +23,9 @@ class Proceso extends Model
     {
         return $this->hasMany(Documento::class, 'DOC_ID_PROCESO', 'PRO_ID');
     }
+
+    public function historialRegistros(): HasMany
+    {
+        return $this->hasMany(HistorialRegistro::class, 'HIS_ID_PROCESO', 'PRO_ID');
+    }
 }

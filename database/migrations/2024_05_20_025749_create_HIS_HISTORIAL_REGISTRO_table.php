@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('HIS_HISTORIAL_REGISTRO', function (Blueprint $table) {
             $table->id('HIS_ID');
             $table->integer('HIS_CONSECUTIVO');
-            $table->foreignId('HIS_ID_DOCUMENTO')->constrained('DOC_DOCUMENTO', 'DOC_ID')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('HIS_ID_PROCESO')->constrained('PRO_PROCESO', 'PRO_ID')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('HIS_ID_TIPO')->constrained('TIP_TIPO_DOC', 'TIP_ID')->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });
     }

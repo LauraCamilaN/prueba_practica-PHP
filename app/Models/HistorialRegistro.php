@@ -16,11 +16,17 @@ class HistorialRegistro extends Model
 
     protected $fillable = [
         'HIS_CONSECUTIVO',
-        'HIS_ID_DOCUMENTO'
+        'HIS_ID_PROCESO',
+        'HIS_ID_TIPO',
     ];
 
-    public function documento(): BelongsTo
+    public function proceso(): BelongsTo
     {
-        return $this->belongsTo(Documento::class, 'HIS_ID_DOCUMENTO', 'DOC_ID');
+        return $this->belongsTo(Proceso::class, 'HIS_ID_PROCESO', 'PRO_ID');
+    }
+
+    public function tipo(): BelongsTo
+    {
+        return $this->belongsTo(TipoDocumento::class, 'HIS_ID_TIPO', 'TIP_ID');
     }
 }

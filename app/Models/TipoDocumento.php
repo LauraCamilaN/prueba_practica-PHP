@@ -24,4 +24,9 @@ class TipoDocumento extends Model
         return $this->hasMany(Documento::class, 'DOC_ID_TIPO', 'TIP_ID');
     }
 
+    public function historialRegistros(): HasMany
+    {
+        return $this->hasMany(HistorialRegistro::class, 'HIS_ID_TIPO', 'TIP_ID');
+    }
+
 }

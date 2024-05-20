@@ -21,6 +21,7 @@ Route::middleware('auth')->group(function(){
         Route::get('calculate_code/{id_proceso}/{id_tipo}', 'calculate_code')->name('calculate_code');
         Route::get('edit/{id}', 'edit')->name('edit');
         Route::patch('update/{id}', 'update')->name('update');
+        Route::get('show/{id}', 'show')->name('show');
         Route::delete('delete/{id}', 'delete')->name('delete');
     });
 });

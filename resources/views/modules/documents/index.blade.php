@@ -23,30 +23,33 @@
               </tr>
             </thead>
             <tbody>
+              @foreach ($documents as $document)
               <tr>
                 <td>
-
+                  <p class="text-xs text-secondary mb-0">{{ $document->DOC_NOMBRE }}</p>
                 </td>
                 <td>
-                  <p class="text-xs text-secondary mb-0"></p>
+                  <p class="text-xs text-secondary mb-0">{{ $document->DOC_CODIGO }}</p>
                 </td>
                 <td>
-                  <p class="text-xs text-secondary mb-0"></p>
+                  <p class="text-xs text-secondary mb-0">{{ $document->tipo->TIP_NOMBRE }}</p>
                 </td>
                 <td>
-                    <p class="text-xs text-secondary mb-0"></p>
+                    <p class="text-xs text-secondary mb-0">{{ $document->proceso->PRO_NOMBRE }}</p>
                 </td>
                 <td class="align-middle text-center">
-                 <a href="#" class="btn btn-sm btn-info">Ver</a>
-                 <a href="#" class="btn btn-sm btn-success">Editar</a>
-                 <a href="#" class="btn btn-sm btn-danger">Eliminar</a>
-                 <a href="#" class="btn btn-sm btn-warning">Generar Archivo</a>
+                 <a class="btn btn-sm btn-info" href="{{ route('documents.show', $document->DOC_ID) }}">Ver</a>
+                 <a class="btn btn-sm btn-success" href="{{ route('documents.edit', $document->DOC_ID) }}">Editar</a>
+                 <a class="btn btn-sm btn-danger" data-id="{{ $document->DOC_ID }}" type="button">Eliminar</a>
                 </td>
               </tr>
+              @endforeach
             </tbody>
           </table>
+          {{ $documents->links() }}
         </div>
       </div>
     </div>
   </div>
+  @include('modules.documents.scripts.delete')
 @endsection
